@@ -1,0 +1,5 @@
+{
+    "python.pythonPath": "/usr/bin/python3",
+    "code-runner.executorMap.python": "python3 -u",
+    "restructuredtext.confPath": "${workspaceFolder}"
+}
