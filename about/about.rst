@@ -17,7 +17,7 @@ Mysocket.io is a service that provides public endpoints for services that are ot
 About this Documentation
 ------------------------
 
-The goal is for the documentation to be continuously written, corrected and edited. 
+The goal is for the documentation to be continuously updated and improved. 
 
 .. note:: You can contribute to the documentation by opening an issue
           or sending patches via pull requests on the `GitHub
@@ -93,13 +93,13 @@ All sockets run on a global anycast network, reducing latency and improving the 
 
 Username and Password protected (http/https) Sockets 
 
-Live Stream of logs. We are showing you all requests in real-time, including the latency between our anycasted nodes and your origin server.
+Live Stream of logs. We show you all requests in real-time, including the latency between our anycasted nodes and your origin server.
 
 Support for multiple origins per socket, ie. Load Balancing
 
 Build on a global anycast network
 ================================
-Mysocket.io has been built on a global anycasted network of **91 Points of Presence in 80 cities across 42 countries.** This helps you improve the availability and performance of the applications that you offer to your global users.  
+Mysocket.io is built on a global anycasted network of **91 Points of Presence in 80 cities across 42 countries.** This helps you improve the availability and performance of the applications that you offer to your global users.  
 Mysocket.io application services connect to use anycast network using various servers in North America, Europe, and Asia.  All this provides us with the best possible low latency user experience and Instant regional failover, which results in an incredible level of high availability.
 
 Example use cases
@@ -107,7 +107,7 @@ Example use cases
 
 Make the local web service on your laptop available to your colleagues or client.
 -----------------------------
-You may prefer to do web development on your laptop, and, before publishing it to some public server, would like to share it quickly with your teammate or client. Using Mysocket.io you can make the web app running on localhost, publicly available to anyone on the Internet. Just share the mysocket.io generated URL with those with who you’d like to share it. If you’d like you can even make it password protected.
+You may prefer to do web development on your laptop, and, before publishing it to some public server, would like to share it quickly with your teammate or client. Using Mysocket.io you can make the web app running on localhost, publicly available to anyone on the Internet. Just share the mysocket.io generated URL with those with who you’d like to share it. If you’d like, you can even make it password protected.
 
 Access your raspberry pi at home from anywhere on the Internet
 --------------------------------

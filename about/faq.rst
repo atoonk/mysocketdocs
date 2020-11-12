@@ -25,11 +25,8 @@ What performance improvement does Mysocket provide?
 
 Where is Mysocket deployed today?
 ====================
-Mysocket.io is leverages a global anycast network of 91 Points of Presence in 80 cities across 42 countries. 
-AWS Global Accelerator Edge locations are located in.
-
+Mysocket.io is built on a global anycast network of 91 Points of Presence in 80 cities across 42 countries. 
 The tunnel and api servers are deployed throughout North America, Europe and Asia.
-
 
 
 What kind of support is provided?
