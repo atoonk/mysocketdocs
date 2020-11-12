@@ -89,6 +89,16 @@
 <li class="toctree-l2"><a class="reference internal" href="#about-this-documentation">About this Documentation</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="#quick-start-start">Quick start start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#features">Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#build-on-a-global-anycast-network">Build on a global anycast network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#example-use-cases">Example use cases</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#make-the-local-web-service-on-your-laptop-available-to-your-colleagues-or-client">Make the local web service on your laptop available to your colleagues or client.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#access-your-raspberry-pi-at-home-from-anywhere-on-the-internet">Access your raspberry pi at home from anywhere on the Internet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#a-global-stable-public-endpoint-for-your-ephemeral-resources">A global stable public endpoint for your ephemeral resources.</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#interacting-with-the-mysocket-io-service">Interacting with the Mysocket.io service</a></li>
 <li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#what-is-mysocket-and-why-was-it-developed">What is Mysocket and why was it developed?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html#question-2">question 2?</a></li>
@@ -98,8 +108,32 @@
 <p class="caption"><span class="caption-text">mysocketctl</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../mysocketctl/mysocket.html">Introduction</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../mysocketctl/mysocket.html#about-mysocket">About Mysocket</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../mysocketctl/mysocket.html#about-this-documentation">About this Documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../mysocketctl/mysocket.html#installing-mysocketctl">Installing Mysocketctl</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../mysocketctl/mysocket.html#the-quick-way-download-the-executable">The quick way, download the executable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mysocketctl/mysocket.html#using-pip">Using Pip</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../mysocketctl/mysocket.html#account-management-and-login">Account management and login</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../mysocketctl/mysocket.html#creating-an-account">Creating an account</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mysocketctl/mysocket.html#logging-in-and-get-a-token">Logging in and get a token</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mysocketctl/mysocket.html#account-information">Account information</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../mysocketctl/mysocket.html#quick-connect-options">Quick connect options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mysocketctl/mysocket.html#socket-management">Socket Management</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../mysocketctl/mysocket.html#creating-sockets">Creating sockets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mysocketctl/mysocket.html#listing-all-sockets">Listing all sockets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mysocketctl/mysocket.html#delete-sockets">Delete sockets</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../mysocketctl/mysocket.html#tunnel-management">Tunnel Management</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../mysocketctl/mysocket.html#creating-a-tunnel">Creating a tunnel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mysocketctl/mysocket.html#listing-all-tunnels-for-a-socket">Listing all tunnels for a socket</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mysocketctl/mysocket.html#deleting-a-tunnel">Deleting a tunnel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mysocketctl/mysocket.html#connecting-and-using-a-tunnel">Connecting and using a tunnel</a></li>
 </ul>
 </li>
 </ul>
@@ -169,22 +203,109 @@
             
   <div class="section" id="introduction">
 <span id="index-0"></span><h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
-<p>Welcome to the documentation for Mysocket.io.
-This page gives a broad overview of Mysocket</p>
+<p>Welcome to the documentation for Mysocket.io, a service that provides you with
+fast and secure network connectivity whenever you need it, wherever you are.</p>
 <div class="section" id="about-mysocket">
 <h2>About Mysocket<a class="headerlink" href="#about-mysocket" title="Permalink to this headline">¶</a></h2>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Rhoncus aenean vel elit scelerisque. Viverra accumsan in nisl nisi scelerisque eu. Nulla pharetra diam sit amet nisl suscipit adipiscing bibendum est. Velit aliquet sagittis id consectetur purus ut. Cras sed felis eget velit aliquet sagittis. Facilisi cras fermentum odio eu feugiat pretium nibh. Congue quisque egestas diam in arcu cursus. Auctor neque vitae tempus quam. Nulla malesuada pellentesque elit eget gravida.</p>
+<p>Mysocket.io is a service that provides public endpoints for services that are otherwise not publicly reachable. A typical example is a web service running on your laptop, which you’d like to make available to your client. Or ssh access to servers behind NAT or a firewall, like a raspberry pi on your home network. Mysocket.io is a fully managed cloud service, so nothing to run!</p>
 </div>
 <div class="section" id="about-this-documentation">
 <h2>About this Documentation<a class="headerlink" href="#about-this-documentation" title="Permalink to this headline">¶</a></h2>
 <p>The goal is for the documentation to be continuously written, corrected and edited.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>You can contribute to the RPKI documentation by opening an issue
+<p>You can contribute to the documentation by opening an issue
 or sending patches via pull requests on the <a class="reference external" href="https://github.com/NLnetLabs/rpki-doc">GitHub
 source repository</a>.</p>
 </div>
 </div>
+</div>
+<div class="section" id="quick-start-start">
+<h1>Quick start start<a class="headerlink" href="#quick-start-start" title="Permalink to this headline">¶</a></h1>
+<p>More documentation can be found below; but if you’re eager to get started, consider this a quick start.
+Download the mysocketctl (MacOSx and Linux)
+Create an account:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysocketctl</span><span class="o">.</span><span class="n">py</span> <span class="n">account</span> <span class="n">create</span> \
+    <span class="o">--</span><span class="n">name</span> <span class="s2">&quot;your_name&quot;</span> \
+    <span class="o">--</span><span class="n">email</span> <span class="s2">&quot;your_email_address&quot;</span> \
+    <span class="o">--</span><span class="n">password</span> <span class="s2">&quot;a_secure_password&quot;</span> \
+    <span class="o">--</span><span class="n">sshkey</span> <span class="s2">&quot;$(cat ~/.ssh/id_rsa.pub)&quot;</span>
+</pre></div>
+</div>
+<p>After confirming your new account (check your email), login and retrieve an access token:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysocketctl</span><span class="o">.</span><span class="n">py</span> <span class="n">login</span> <span class="o">--</span><span class="n">email</span> \
+    <span class="o">--</span><span class="n">email</span> <span class="s2">&quot;your_email_address&quot;</span> \
+    <span class="o">--</span><span class="n">password</span> <span class="s2">&quot;a_secure_password&quot;</span> \
+</pre></div>
+</div>
+<p>Now you’re ready to use the “quick connect” feature to connect your local service listening on port 8000  to the Internet:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>mysocketctl.py connect \
+    --port 8000 \
+    --name &quot;my test service&quot;
+
++--------------------------------------+---------------------------------+-----------------+
+|              socket_id               |             dns_name            |       name      |
++--------------------------------------+---------------------------------+-----------------+
+| 24cd3fa2-b56a-486f-a554-30924bae54d0 | long-hill-8399.edge.mysocket.io | my test service |
++--------------------------------------+---------------------------------+-----------------+
+
+Connecting to Server: ssh.mysocket.io
+
+Welcome to Mysocket.io!
+my test service - https://long-hill-8399.edge.mysocket.io
+
+=======================================================
+Logs
+=======================================================
+&lt;live stream of your logs here&gt;
+</pre></div>
+</div>
+<p>To quickly test if it’s working, you can start a web service on localhost port 8000 like this.</p>
+<p><code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">-m</span> <span class="pre">http.server</span> <span class="pre">8000</span></code></p>
+<p>Now visit the URL (dns_name) using your browser, and you’ll see that the localhost service you just started is now globally available!</p>
+</div>
+<div class="section" id="features">
+<h1>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h1>
+<p>Stable public DNS names and port numbers for your private apps.</p>
+<dl class="simple">
+<dt>Supports various socket types, including:</dt><dd><ol class="arabic simple">
+<li><p>http</p></li>
+<li><p>https</p></li>
+<li><p>TCP</p></li>
+<li><p>TLS</p></li>
+</ol>
+</dd>
+</dl>
+<p>Options for SSL/TLS Encryption for your sockets</p>
+<p>All sockets run on a global anycast network, reducing latency and improving the user experience.</p>
+<p>Username and Password protected (http/https) Sockets</p>
+<p>Live Stream of logs. We are showing you all requests in real-time, including the latency between our anycasted nodes and your origin server.</p>
+<p>Support for multiple origins per socket, ie. Load Balancing</p>
+</div>
+<div class="section" id="build-on-a-global-anycast-network">
+<h1>Build on a global anycast network<a class="headerlink" href="#build-on-a-global-anycast-network" title="Permalink to this headline">¶</a></h1>
+<p>Mysocket.io has been built on a global anycasted network of <strong>91 Points of Presence in 80 cities across 42 countries.</strong> This helps you improve the availability and performance of the applications that you offer to your global users.
+Mysocket.io application services connect to use anycast network using various servers in North America, Europe, and Asia.  All this provides us with the best possible low latency user experience and Instant regional failover, which results in an incredible level of high availability.</p>
+</div>
+<div class="section" id="example-use-cases">
+<h1>Example use cases<a class="headerlink" href="#example-use-cases" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="make-the-local-web-service-on-your-laptop-available-to-your-colleagues-or-client">
+<h2>Make the local web service on your laptop available to your colleagues or client.<a class="headerlink" href="#make-the-local-web-service-on-your-laptop-available-to-your-colleagues-or-client" title="Permalink to this headline">¶</a></h2>
+<p>You may prefer to do web development on your laptop, and, before publishing it to some public server, would like to share it quickly with your teammate or client. Using Mysocket.io you can make the web app running on localhost, publicly available to anyone on the Internet. Just share the mysocket.io generated URL with those with who you’d like to share it. If you’d like you can even make it password protected.</p>
+</div>
+<div class="section" id="access-your-raspberry-pi-at-home-from-anywhere-on-the-internet">
+<h2>Access your raspberry pi at home from anywhere on the Internet<a class="headerlink" href="#access-your-raspberry-pi-at-home-from-anywhere-on-the-internet" title="Permalink to this headline">¶</a></h2>
+<p>You have a small lab at home, perhaps with a raspberry pi or Intel nuc. Since these are behind your NAT router you can’t normally SSH into them. By using Mysocket.io you can make the SSH services on your home server available by tunneling TCP traffic through the tunnel seamlessly through NAT. Mysocket.io will provide a public DNS name and port number, which can be used to SSH into your server from anywhere.</p>
+</div>
+<div class="section" id="a-global-stable-public-endpoint-for-your-ephemeral-resources">
+<h2>A global stable public endpoint for your ephemeral resources.<a class="headerlink" href="#a-global-stable-public-endpoint-for-your-ephemeral-resources" title="Permalink to this headline">¶</a></h2>
+<p>Your containers come and go, perhaps even distributed over various public clouds as well as your private datacenter. It can be challenging to provide a stable public endpoint for these ephemeral and mobile services. With mysocket.io you can create a public endpoint, either an http/https, or TCP, TLS endpoint. Now each time a new container comes up, it can connect to the mysocket.io service and register as a new origin (backend) server. You can have one, or many of these origin services per public socket.</p>
+</div>
+</div>
+<div class="section" id="interacting-with-the-mysocket-io-service">
+<h1>Interacting with the Mysocket.io service<a class="headerlink" href="#interacting-with-the-mysocket-io-service" title="Permalink to this headline">¶</a></h1>
+<p>The easiest way to get started with the service is by using the mysocketctl cli tool. More details about that can be found here.
+All interaction with our services is done using our RESTful API. You can find the API and the API specifications at <a class="reference external" href="https://api.mysocket.io/">https://api.mysocket.io/</a>  The mysocketctl tool uses this API to interact with the service.</p>
 </div>
 
 
