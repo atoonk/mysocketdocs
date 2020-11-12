@@ -4,9 +4,9 @@
 Introduction
 ============
 
-Mysocketctl is a cli tool that allows you to easily manage and and use the Mysocket services. 
-Mysocketctl is a python tool which uses api.mysocket.io rest api to configure the various objects needed to use the services. 
-Using the mysocketctl users can create and manage their account, as well as manage sockets and tunnels and easily connect to the service. 
+``mysocketctl`` is a cli tool that allows you to easily manage and and use the Mysocket services. 
+``mysocketctl`` is a python tool that uses api.mysocket.io REST api to configure the various objects needed to use the services. 
+Using ``mysocketctl`` users can create and manage their account, as well as manage sockets and tunnels and easily connect to the service. 
 
 ::
 
@@ -28,7 +28,7 @@ Using the mysocketctl users can create and manage their account, as well as mana
 About this Documentation
 ------------------------
 
-The goal is for the documentation to be continuously written, corrected and edited. 
+The goal is for the documentation to be continuously updated and improved.
 
 .. note:: You can contribute to this documentation by opening an issue
           or sending patches via pull requests on the `GitHub
@@ -41,11 +41,11 @@ The code for mysocketctl can be found here ...
 
 The quick way, download the executable
 -------------------------------
-For those who just want to get started quickly a binary for Mac OSx and Linux is available. 
+For those who want to get started quickly a binary for Mac OSx and Linux is available. 
 
 ::
 
-    curl 
+    curl ...
     chmod +x ./mysocketctl
 
 
@@ -75,10 +75,10 @@ Account management and login
 
 Creating an account
 ---------------------------
-In order to use mysocket.io users will need to register and create an account. 
+To use mysocket.io users will need to register and create an account. 
 Use the following command to create an account. Make sure to use a valid email address as we’ll use it to send you an email to validate your account.
 
-We need an ssh public key as well, that’s what’s later used to setup tunnels. 
+We need an ssh public key as well, this is what we later use to setup and authenticate tunnels. 
 If you don’t know how to create an ssh key pair, please see this link:
 
 https://git-scm.com/book/en/v2/Git-on-the-Server-Generating-Your-SSH-Public-Key
@@ -93,7 +93,7 @@ Make sure to upload your public key only.
         --password "a_secure_password" \
         --sshkey "$(cat ~/.ssh/id_rsa.pub)"
 
-You should receive an email now, with a confirmation link. Please click the link to validate your email account. After that you can login
+You should receive an email now with a confirmation link. Please click the link to validate your email account. After that, you can login
 
 
 Logging in and get a token
@@ -106,12 +106,12 @@ In order to use the service please login like below
 
     Logged in! Token stored in /Users/johndoe/.mysocketio_token
 
-The login process returns a jwt token that is stored in a ``.mysocketio_token`` file located in the users home directory. Going forward mysocketctl will use this token to authenticate with the API. Currently the token is valid for 300 minutes, ie. 5hrs. 
+The login process returns a jwt token that is stored in a ``.mysocketio_token`` file located in the users home directory. Going forward, ``mysocketctl`` will use this token to authenticate with the API. Currently, the token is valid for 300 minutes, ie. 5hrs. 
 The user will need to re-issue a login request when the token has expired.
 
 Account information
 ----------------------------
-To see information about your account use the following command.
+To see information about your account, use the following command.
 ::
     mysocketctl account show
     +-----------------------------------------------------------------+
@@ -124,7 +124,7 @@ To see information about your account use the following command.
 
 Quick connect options
 ============================
-The quick connect function allows users to quickly, ie. in one command:
+The quick-connect function allows users to quickly, ie. in one command:
 
 1. Create a socket
 
@@ -133,8 +133,8 @@ The quick connect function allows users to quickly, ie. in one command:
 3. Make a local service available by connecting the tunnel to mysocket.
 
 
-This quick connect feature is useful for when you just want to make a local service available quickly. Later on we’ll look at how to configure and manage all the individual components.
-Every time the connect feature is used a new socket and corresponding DNS name is created. If you need more permanent names please look at creating sockets and tunnels separately. 
+This quick connect feature is useful for when you want to make a local service available quickly. Later on we’ll look at how to configure and manage all the individual components.
+Every time the connect feature is used, a new socket and, corresponding DNS name is created. If you need more permanent names, please look at creating sockets and tunnels separately. 
 ::
     mysocketctl.py connect --help
     Usage: mysocketctl.py connect [OPTIONS]
@@ -151,8 +151,8 @@ Every time the connect feature is used a new socket and corresponding DNS name i
     --type TEXT                    Socket type, http, https, tcp, tls
     --help                         Show this message and exit.
 
-In the example bellow we’ll connect our local port 8000 to the mysocket service.
-Mysocket.io will automatically create a socket with a DNS name for you. It will also create a tunnel, which mysocketctl will use to connect to automatically. 
+In the example bellow, we’ll connect our local port 8000 to the mysocket service.
+Mysocket.io will automatically create a socket with a DNS name for you. It will also create a tunnel, which ``mysocketctl`` will use to connect to automatically. 
 
 ::
 
@@ -176,12 +176,12 @@ Mysocket.io will automatically create a socket with a DNS name for you. It will 
     ....
 
 
-In this case a socket with the name muddy-darkness-2030.edge.mysocket.io was created. Using your browser you can now visit this socket which is automatically connected to the http service running on your localhost port 8000. 
+In this case, a socket with the name muddy-darkness-2030.edge.mysocket.io was created. Using your browser, you can now visit this socket which is automatically connected to the http service running on your localhost port 8000. 
 Note, to test this, you can quickly start a localhost http server on port 8000 like this:
 
 ``python3 -m http.server 8000``
 
-All requests are logged and shown in the mysocketctl terminal.
+All requests are logged and shown in the ``mysocketctl`` terminal.
 
 ``Ctrl-c`` will cause the ssh tunnel to disconnect.  Mysocketctl will automatically reconnect the tunnel, this is to recover from possible network issues. 
 To end the quick connect session press ``ctrl-c`` twice. 
@@ -202,9 +202,9 @@ There are three types of socket supported today:
 
 1. **http/https**. Use this when your local service is a http service. 
 
-2. **TCP**. Use this when your local service is a non-http service. In this case mysocket will proxy a raw tcp session. Useful for for example ssh or https services. Note that in this case mysocket will, in addition to a unique DNS name, also create a TCP port number just for your service.
+2. **TCP**. Use this when your local service is a non-http service. In this case mysocket will proxy a raw tcp session. This is used for example for ssh or https services. Note that in this case mysocket will, in addition to a unique DNS name, also create a TCP port number just for your service.
 
-3. **TLS**. This is a TLS encrypted TCP socket. This is great to for example make your local mysql service available over TLS.
+3. **TLS**. This is a TLS encrypted TCP socket. This is great to, for example, make your local mysql service available over TLS.
 
 ::
 
@@ -223,7 +223,7 @@ There are three types of socket supported today:
 
 Creating sockets
 --------------------
-The command below create a http socket of type http. It returns the socket_id and dns name. 
+The command below creates an http socket of type http. It returns the socket_id and dns name. 
 ::
     mysocketctl.py socket create \
         --name "my local http service" \
@@ -234,7 +234,7 @@ The command below create a http socket of type http. It returns the socket_id an
     | 506182d3-1109-4d94-96f1-3bd7b0de68a9 | frosty-rain-6381.edge.mysocket.io |  80 443 | http | my local http service |
     +--------------------------------------+-----------------------------------+---------+------+-----------------------+
 
-For http based services we can add password protection to the socket. This means that the user will see a username password window before visiting your socket service. Below an example of creating a password protected socket, with username john and password secret.
+For http based services, we can add password protection to the socket. This means that the user will see a username password window before visiting your socket service. Below an example of creating a password-protected socket, with username john and password secret.
 ::
     mysocketctl.py socket create \
         --name "my local http service" \
@@ -283,8 +283,8 @@ To delete a socket, issue the socket delete command and provide the socket_id yo
 
 Tunnel Management
 =========================
-In the previous section we looked at managing sockets. Sockets are created on the mysocket servers and serve as the public endpoint for your local services. In order to connect your local service to the mysocket socket we need tunnels. 
-In this section we’ll explain how to manage tunnels and how to connect the tunnels. Tunnels provide the connection between your local service and the globally anycasted public sockets for you. Currently we support ssh as a transport protocol for secure connectivity between your local services and mysocket.
+In the previous section, we looked at managing sockets. Sockets are created on the mysocket servers and serve as the public endpoint for your local services. In order to connect your local service to the mysocket socket we need tunnels. 
+In this section, we’ll explain how to manage tunnels and how to connect the tunnels. Tunnels provide the connection between your local service and the globally anycasted public sockets for you. Currently, we support ssh as a transport protocol for secure connectivity between your local services and mysocket.
 Note that a socket can have multiple tunnels. In that case mysocket will load balance over all available tunnels.
 ::
 
@@ -357,7 +357,7 @@ In order to spin up your tunnel, the ``mysocketctl tunnel connect`` feature may 
     --help            Show this message and exit.
 
 It requires socket_id and tunnel_id as mandatory arguments. It also needs to know what port number the local service listens on. This can be any local TCP port, as long as you have something listening on it.
-For example if you have a local webservice you want to make publicly available using this tunnel in port 8000 the provide 8000 as the --port parameter.
+For example, if you have a local webservice, you want to make publicly available using this tunnel in port 8000 then provide 8000 as the ``--port`` parameter.
 If you wanted to make ssh available and the socket you created is of type TCP, then provide port 22 as the port parameter.
 ::
     mysocketctl.py tunnel connect \
@@ -375,7 +375,7 @@ If you wanted to make ssh available and the socket you created is of type TCP, t
     =======================================================
 
 
-After issuing the tunnel connect command, mysocketctl calls ssh and sets up the SSH tunnel to ssh.mysocket.io. This is an anycasted ssh service, so users will always use the closest, lowest latency, mysocket ssh server.  Once connected, the mysocket control plane will signal in real time all other servers where this tunnel is. As a result you can re-use the tunnel from multiple endpoints, but only the latest login will be used for traffic. If you would like to load balance over multiple ssh sessions, simply create multiple tunnel connections first.
+After issuing the tunnel connect command, ``mysocketctl`` calls ssh and sets up the SSH tunnel to ssh.mysocket.io. This is an anycasted ssh service, so users will always use the closest, lowest latency, mysocket ssh server.  Once connected, the mysocket control plane will signal in real-time all other servers where this tunnel is. As a result, you can re-use the tunnel from multiple endpoints, but only the latest login will be used for traffic. If you would like to load balance over multiple ssh sessions, simply create multiple tunnel connections first.
 
 The stop the tunnel session, press ``ctr-c``.
 
