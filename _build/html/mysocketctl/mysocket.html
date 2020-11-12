@@ -97,8 +97,32 @@
 <p class="caption"><span class="caption-text">mysocketctl</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#about-mysocket">About Mysocket</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#about-this-documentation">About this Documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#installing-mysocketctl">Installing Mysocketctl</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#the-quick-way-download-the-executable">The quick way, download the executable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-pip">Using Pip</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#account-management-and-login">Account management and login</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#creating-an-account">Creating an account</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logging-in-and-get-a-token">Logging in and get a token</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#account-information">Account information</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#quick-connect-options">Quick connect options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#socket-management">Socket Management</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#creating-sockets">Creating sockets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#listing-all-sockets">Listing all sockets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#delete-sockets">Delete sockets</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#tunnel-management">Tunnel Management</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#creating-a-tunnel">Creating a tunnel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#listing-all-tunnels-for-a-socket">Listing all tunnels for a socket</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#deleting-a-tunnel">Deleting a tunnel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#connecting-and-using-a-tunnel">Connecting and using a tunnel</a></li>
 </ul>
 </li>
 </ul>
@@ -168,21 +192,355 @@
             
   <div class="section" id="introduction">
 <span id="index-0"></span><h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
-<p>Welcome to the documentation for Mysocket.io.
-This page gives a broad overview of Mysocket</p>
-<div class="section" id="about-mysocket">
-<h2>About Mysocket<a class="headerlink" href="#about-mysocket" title="Permalink to this headline">¶</a></h2>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Rhoncus aenean vel elit scelerisque. Viverra accumsan in nisl nisi scelerisque eu. Nulla pharetra diam sit amet nisl suscipit adipiscing bibendum est. Velit aliquet sagittis id consectetur purus ut. Cras sed felis eget velit aliquet sagittis. Facilisi cras fermentum odio eu feugiat pretium nibh. Congue quisque egestas diam in arcu cursus. Auctor neque vitae tempus quam. Nulla malesuada pellentesque elit eget gravida.</p>
+<p>Mysocketctl is a cli tool that allows you to easily manage and and use the Mysocket services.
+Mysocketctl is a python tool which uses api.mysocket.io rest api to configure the various objects needed to use the services.
+Using the mysocketctl users can create and manage their account, as well as manage sockets and tunnels and easily connect to the service.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ mysocketctl.py
+Usage: mysocketctl.py [OPTIONS] COMMAND [ARGS]...
+
+Options:
+--help  Show this message and exit.
+
+Commands:
+account  Create a new account or see account information.
+connect  Quckly connect, Wrapper around sockets and tunnels
+login    Login to mysocket and get a token
+socket   Manage your global sockets
+tunnel   Manage your tunnels
+</pre></div>
 </div>
 <div class="section" id="about-this-documentation">
 <h2>About this Documentation<a class="headerlink" href="#about-this-documentation" title="Permalink to this headline">¶</a></h2>
 <p>The goal is for the documentation to be continuously written, corrected and edited.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>You can contribute to the RPKI documentation by opening an issue
+<p>You can contribute to this documentation by opening an issue
 or sending patches via pull requests on the <a class="reference external" href="https://github.com/NLnetLabs/rpki-doc">GitHub
 source repository</a>.</p>
 </div>
+</div>
+</div>
+<div class="section" id="installing-mysocketctl">
+<h1>Installing Mysocketctl<a class="headerlink" href="#installing-mysocketctl" title="Permalink to this headline">¶</a></h1>
+<p>The code for mysocketctl can be found here …</p>
+<div class="section" id="the-quick-way-download-the-executable">
+<h2>The quick way, download the executable<a class="headerlink" href="#the-quick-way-download-the-executable" title="Permalink to this headline">¶</a></h2>
+<p>For those who just want to get started quickly a binary for Mac OSx and Linux is available.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span>
+<span class="n">chmod</span> <span class="o">+</span><span class="n">x</span> <span class="o">./</span><span class="n">mysocketctl</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="using-pip">
+<h2>Using Pip<a class="headerlink" href="#using-pip" title="Permalink to this headline">¶</a></h2>
+<p>Or use pip to install mysocketctl</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip3</span> <span class="n">install</span> <span class="n">mysocketctl</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="account-management-and-login">
+<h1>Account management and login<a class="headerlink" href="#account-management-and-login" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ mysocketctl.py account --help
+Usage: mysocketctl.py account [OPTIONS] COMMAND [ARGS]...
+
+Create a new account or see account information.
+
+Options:
+--help  Show this message and exit.
+
+Commands:
+create  Create your new mysocket.io account
+show    Show your mysocket.io account information
+</pre></div>
+</div>
+<div class="section" id="creating-an-account">
+<h2>Creating an account<a class="headerlink" href="#creating-an-account" title="Permalink to this headline">¶</a></h2>
+<p>In order to use mysocket.io users will need to register and create an account.
+Use the following command to create an account. Make sure to use a valid email address as we’ll use it to send you an email to validate your account.</p>
+<p>We need an ssh public key as well, that’s what’s later used to setup tunnels.
+If you don’t know how to create an ssh key pair, please see this link:</p>
+<p><a class="reference external" href="https://git-scm.com/book/en/v2/Git-on-the-Server-Generating-Your-SSH-Public-Key">https://git-scm.com/book/en/v2/Git-on-the-Server-Generating-Your-SSH-Public-Key</a></p>
+<p>Make sure to upload your public key only.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysocketctl</span><span class="o">.</span><span class="n">py</span> <span class="n">account</span> <span class="n">create</span> \
+    <span class="o">--</span><span class="n">name</span> <span class="s2">&quot;your_name&quot;</span> \
+    <span class="o">--</span><span class="n">email</span> <span class="s2">&quot;your_email_address&quot;</span> \
+    <span class="o">--</span><span class="n">password</span> <span class="s2">&quot;a_secure_password&quot;</span> \
+    <span class="o">--</span><span class="n">sshkey</span> <span class="s2">&quot;$(cat ~/.ssh/id_rsa.pub)&quot;</span>
+</pre></div>
+</div>
+<p>You should receive an email now, with a confirmation link. Please click the link to validate your email account. After that you can login</p>
+</div>
+<div class="section" id="logging-in-and-get-a-token">
+<h2>Logging in and get a token<a class="headerlink" href="#logging-in-and-get-a-token" title="Permalink to this headline">¶</a></h2>
+<p>In order to use the service please login like below</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>mysocketctl.py login \
+    --email &quot;your_email_address&quot; \
+    --password &quot;a_secure_password&quot; \
+
+Logged in! Token stored in /Users/johndoe/.mysocketio_token
+</pre></div>
+</div>
+<p>The login process returns a jwt token that is stored in a <code class="docutils literal notranslate"><span class="pre">.mysocketio_token</span></code> file located in the users home directory. Going forward mysocketctl will use this token to authenticate with the API. Currently the token is valid for 300 minutes, ie. 5hrs.
+The user will need to re-issue a login request when the token has expired.</p>
+</div>
+<div class="section" id="account-information">
+<h2>Account information<a class="headerlink" href="#account-information" title="Permalink to this headline">¶</a></h2>
+<p>To see information about your account use the following command.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysocketctl</span> <span class="n">account</span> <span class="n">show</span>
+<span class="o">+-----------------------------------------------------------------+</span>
+<span class="o">|</span> <span class="n">Name</span>         <span class="o">|</span> <span class="n">Andree</span> <span class="n">Toonk</span>                                     <span class="o">|</span>
+<span class="o">|</span> <span class="n">Email</span>        <span class="o">|</span> <span class="n">blabla</span><span class="nd">@gmail</span><span class="o">.</span><span class="n">com</span>                                 <span class="o">|</span>
+<span class="o">|</span> <span class="n">user</span> <span class="nb">id</span>      <span class="o">|</span> <span class="n">b2f1b59f</span><span class="o">-</span><span class="n">bcba</span><span class="o">-</span><span class="mi">4286</span><span class="o">-</span><span class="mi">9818</span><span class="o">-</span><span class="mi">9</span><span class="n">f0b6e685e93</span>             <span class="o">|</span>
+<span class="o">|</span> <span class="n">ssh</span> <span class="n">username</span> <span class="o">|</span> <span class="n">b2f1b59fbcba428698189f0b6e685e93</span>                 <span class="o">|</span>
+<span class="o">|</span> <span class="n">ssh</span> <span class="n">key</span>      <span class="o">|</span> <span class="n">ssh</span><span class="o">-</span><span class="n">rsa</span> <span class="o">&lt;</span><span class="n">your</span> <span class="n">public</span> <span class="n">key</span><span class="o">....</span><span class="n">SNIP</span> <span class="n">TOO</span> <span class="n">lONG</span><span class="o">&gt;</span>       <span class="o">|</span>
+<span class="o">+-----------------------------------------------------------------+</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="quick-connect-options">
+<h1>Quick connect options<a class="headerlink" href="#quick-connect-options" title="Permalink to this headline">¶</a></h1>
+<p>The quick connect function allows users to quickly, ie. in one command:</p>
+<ol class="arabic simple">
+<li><p>Create a socket</p></li>
+<li><p>Create a tunnel</p></li>
+<li><p>Make a local service available by connecting the tunnel to mysocket.</p></li>
+</ol>
+<p>This quick connect feature is useful for when you just want to make a local service available quickly. Later on we’ll look at how to configure and manage all the individual components.
+Every time the connect feature is used a new socket and corresponding DNS name is created. If you need more permanent names please look at creating sockets and tunnels separately.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysocketctl</span><span class="o">.</span><span class="n">py</span> <span class="n">connect</span> <span class="o">--</span><span class="n">help</span>
+<span class="n">Usage</span><span class="p">:</span> <span class="n">mysocketctl</span><span class="o">.</span><span class="n">py</span> <span class="n">connect</span> <span class="p">[</span><span class="n">OPTIONS</span><span class="p">]</span>
+
+<span class="n">Quckly</span> <span class="n">connect</span><span class="p">,</span> <span class="n">Wrapper</span> <span class="n">around</span> <span class="n">sockets</span> <span class="ow">and</span> <span class="n">tunnels</span>
+
+<span class="n">Options</span><span class="p">:</span>
+<span class="o">--</span><span class="n">port</span> <span class="n">INTEGER</span>                 <span class="n">Local</span> <span class="n">port</span> <span class="n">to</span> <span class="n">connect</span>  <span class="p">[</span><span class="n">required</span><span class="p">]</span>
+<span class="o">--</span><span class="n">name</span> <span class="n">TEXT</span>
+<span class="o">--</span><span class="n">protected</span> <span class="n">TEXT</span>
+<span class="o">--</span><span class="n">protected</span> <span class="o">/</span> <span class="o">--</span><span class="ow">not</span><span class="o">-</span><span class="n">protected</span>
+<span class="o">--</span><span class="n">username</span> <span class="n">TEXT</span>
+<span class="o">--</span><span class="n">password</span> <span class="n">TEXT</span>
+<span class="o">--</span><span class="nb">type</span> <span class="n">TEXT</span>                    <span class="n">Socket</span> <span class="nb">type</span><span class="p">,</span> <span class="n">http</span><span class="p">,</span> <span class="n">https</span><span class="p">,</span> <span class="n">tcp</span><span class="p">,</span> <span class="n">tls</span>
+<span class="o">--</span><span class="n">help</span>                         <span class="n">Show</span> <span class="n">this</span> <span class="n">message</span> <span class="ow">and</span> <span class="n">exit</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>In the example bellow we’ll connect our local port 8000 to the mysocket service.
+Mysocket.io will automatically create a socket with a DNS name for you. It will also create a tunnel, which mysocketctl will use to connect to automatically.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>mysocketctl.py connect \
+    --port 8000 \
+    --name &quot;my test service&quot;
++--------------------------------------+--------------------------------------+-----------------+
+|              socket_id               |               dns_name               |       name      |
++--------------------------------------+--------------------------------------+-----------------+
+| d84515f7-5c6e-4970-83bb-e25c1ca8cf16 | muddy-darkness-2030.edge.mysocket.io | my test service |
++--------------------------------------+--------------------------------------+-----------------+
+
+Connecting to Server: ssh.mysocket.io
+
+Welcome to Mysocket.io!
+my test service - https://muddy-darkness-2030.edge.mysocket.io
+
+=======================================================
+Logs
+=======================================================
+....
+</pre></div>
+</div>
+<p>In this case a socket with the name muddy-darkness-2030.edge.mysocket.io was created. Using your browser you can now visit this socket which is automatically connected to the http service running on your localhost port 8000.
+Note, to test this, you can quickly start a localhost http server on port 8000 like this:</p>
+<p><code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">-m</span> <span class="pre">http.server</span> <span class="pre">8000</span></code></p>
+<p>All requests are logged and shown in the mysocketctl terminal.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Ctrl-c</span></code> will cause the ssh tunnel to disconnect.  Mysocketctl will automatically reconnect the tunnel, this is to recover from possible network issues.
+To end the quick connect session press <code class="docutils literal notranslate"><span class="pre">ctrl-c</span></code> twice.
+This will make sure the socket objects are automatically deleted, so you won’t hit any of the account limits.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>^C  (ctr-c)
+Connection to ssh.mysocket.io closed.
+Disconnected... Automatically reconnecting now..
+Press ctrl-c to exit
+^C (ctr-c)
+Bye
+cleaning up…
+</pre></div>
+</div>
+</div>
+<div class="section" id="socket-management">
+<h1>Socket Management<a class="headerlink" href="#socket-management" title="Permalink to this headline">¶</a></h1>
+<p>Sockets are the public endpoint that mysocket creates on behalf of users. Each socket will come with a unique DNS name.
+There are three types of socket supported today:</p>
+<ol class="arabic simple">
+<li><p><strong>http/https</strong>. Use this when your local service is a http service.</p></li>
+<li><p><strong>TCP</strong>. Use this when your local service is a non-http service. In this case mysocket will proxy a raw tcp session. Useful for for example ssh or https services. Note that in this case mysocket will, in addition to a unique DNS name, also create a TCP port number just for your service.</p></li>
+<li><p><strong>TLS</strong>. This is a TLS encrypted TCP socket. This is great to for example make your local mysql service available over TLS.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysocketctl</span> <span class="n">socket</span> <span class="o">--</span><span class="n">help</span>
+<span class="n">Usage</span><span class="p">:</span> <span class="n">mysocketctl</span><span class="o">.</span><span class="n">py</span> <span class="n">socket</span> <span class="p">[</span><span class="n">OPTIONS</span><span class="p">]</span> <span class="n">COMMAND</span> <span class="p">[</span><span class="n">ARGS</span><span class="p">]</span><span class="o">...</span>
+
+<span class="n">Manage</span> <span class="n">your</span> <span class="k">global</span> <span class="n">sockets</span>
+
+<span class="n">Options</span><span class="p">:</span>
+<span class="o">--</span><span class="n">help</span>  <span class="n">Show</span> <span class="n">this</span> <span class="n">message</span> <span class="ow">and</span> <span class="n">exit</span><span class="o">.</span>
+
+<span class="n">Commands</span><span class="p">:</span>
+<span class="n">create</span>
+<span class="n">delete</span>
+<span class="n">ls</span>
+</pre></div>
+</div>
+<div class="section" id="creating-sockets">
+<h2>Creating sockets<a class="headerlink" href="#creating-sockets" title="Permalink to this headline">¶</a></h2>
+<p>The command below create a http socket of type http. It returns the socket_id and dns name.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysocketctl</span><span class="o">.</span><span class="n">py</span> <span class="n">socket</span> <span class="n">create</span> \
+    <span class="o">--</span><span class="n">name</span> <span class="s2">&quot;my local http service&quot;</span> \
+    <span class="o">--</span><span class="nb">type</span> <span class="n">http</span>
+<span class="o">+--------------------------------------+-----------------------------------+---------+------+-----------------------+</span>
+<span class="o">|</span>              <span class="n">socket_id</span>               <span class="o">|</span>              <span class="n">dns_name</span>             <span class="o">|</span> <span class="n">port</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">|</span> <span class="nb">type</span> <span class="o">|</span>          <span class="n">name</span>         <span class="o">|</span>
+<span class="o">+--------------------------------------+-----------------------------------+---------+------+-----------------------+</span>
+<span class="o">|</span> <span class="mi">506182</span><span class="n">d3</span><span class="o">-</span><span class="mi">1109</span><span class="o">-</span><span class="mi">4</span><span class="n">d94</span><span class="o">-</span><span class="mi">96</span><span class="n">f1</span><span class="o">-</span><span class="mi">3</span><span class="n">bd7b0de68a9</span> <span class="o">|</span> <span class="n">frosty</span><span class="o">-</span><span class="n">rain</span><span class="o">-</span><span class="mf">6381.</span><span class="n">edge</span><span class="o">.</span><span class="n">mysocket</span><span class="o">.</span><span class="n">io</span> <span class="o">|</span>  <span class="mi">80</span> <span class="mi">443</span> <span class="o">|</span> <span class="n">http</span> <span class="o">|</span> <span class="n">my</span> <span class="n">local</span> <span class="n">http</span> <span class="n">service</span> <span class="o">|</span>
+<span class="o">+--------------------------------------+-----------------------------------+---------+------+-----------------------+</span>
+</pre></div>
+</div>
+<p>For http based services we can add password protection to the socket. This means that the user will see a username password window before visiting your socket service. Below an example of creating a password protected socket, with username john and password secret.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysocketctl</span><span class="o">.</span><span class="n">py</span> <span class="n">socket</span> <span class="n">create</span> \
+    <span class="o">--</span><span class="n">name</span> <span class="s2">&quot;my local http service&quot;</span> \
+    <span class="o">--</span><span class="nb">type</span> <span class="n">http</span> \
+    <span class="o">--</span><span class="n">protected</span> \
+    <span class="o">--</span><span class="n">username</span> <span class="n">john</span> \
+    <span class="o">--</span><span class="n">password</span> <span class="n">secret</span>
+<span class="o">+--------------------------------------+---------------------------------+---------+------+-----------------------+</span>
+<span class="o">|</span>              <span class="n">socket_id</span>               <span class="o">|</span>             <span class="n">dns_name</span>            <span class="o">|</span> <span class="n">port</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">|</span> <span class="nb">type</span> <span class="o">|</span>          <span class="n">name</span>         <span class="o">|</span>
+<span class="o">+--------------------------------------+---------------------------------+---------+------+-----------------------+</span>
+<span class="o">|</span> <span class="mi">5870</span><span class="n">a362</span><span class="o">-</span><span class="mi">65</span><span class="n">d3</span><span class="o">-</span><span class="mi">474</span><span class="n">d</span><span class="o">-</span><span class="n">bbf6</span><span class="o">-</span><span class="mi">3341827</span><span class="n">eaee0</span> <span class="o">|</span> <span class="n">dark</span><span class="o">-</span><span class="n">darkness</span><span class="o">-</span><span class="mf">6275.</span><span class="n">edge</span><span class="o">.</span><span class="n">mysocket</span><span class="o">.</span><span class="n">io</span> <span class="o">|</span>  <span class="mi">80</span> <span class="mi">443</span> <span class="o">|</span> <span class="n">http</span> <span class="o">|</span> <span class="n">my</span> <span class="n">local</span> <span class="n">http</span> <span class="n">service</span> <span class="o">|</span>
+<span class="o">+--------------------------------------+---------------------------------+---------+------+-----------------------+</span>
+
+<span class="n">Protected</span> <span class="n">Socket</span><span class="p">,</span> <span class="n">login</span> <span class="n">details</span><span class="p">:</span>
+<span class="o">+----------+----------+</span>
+<span class="o">|</span> <span class="n">username</span> <span class="o">|</span> <span class="n">password</span> <span class="o">|</span>
+<span class="o">+----------+----------+</span>
+<span class="o">|</span> <span class="n">john</span>     <span class="o">|</span> <span class="n">secret</span>   <span class="o">|</span>
+<span class="o">+----------+----------+</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="listing-all-sockets">
+<h2>Listing all sockets<a class="headerlink" href="#listing-all-sockets" title="Permalink to this headline">¶</a></h2>
+<p>To see all your socket, issue the socket ls command like below:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysocketctl</span><span class="o">.</span><span class="n">py</span> <span class="n">socket</span> <span class="n">ls</span>
+<span class="o">+--------------------------------------+-----------------------------------------+------+---------+-----------------------+</span>
+<span class="o">|</span> <span class="n">socket_id</span>                            <span class="o">|</span> <span class="n">dns_name</span>                                <span class="o">|</span> <span class="nb">type</span> <span class="o">|</span> <span class="n">port</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">|</span> <span class="n">name</span>                  <span class="o">|</span>
+<span class="o">+--------------------------------------+-----------------------------------------+------+---------+-----------------------+</span>
+<span class="o">|</span> <span class="n">f441738c</span><span class="o">-</span><span class="mi">4</span><span class="n">f77</span><span class="o">-</span><span class="mi">44</span><span class="n">d5</span><span class="o">-</span><span class="n">bc68</span><span class="o">-</span><span class="mi">99664</span><span class="n">f272319</span> <span class="o">|</span> <span class="n">restless</span><span class="o">-</span><span class="n">night</span><span class="o">-</span><span class="mf">1301.</span><span class="n">edge</span><span class="o">.</span><span class="n">mysocket</span><span class="o">.</span><span class="n">io</span>    <span class="o">|</span> <span class="n">http</span> <span class="o">|</span> <span class="mi">80</span> <span class="mi">443</span>  <span class="o">|</span> <span class="n">Local</span> <span class="n">port</span> <span class="mi">44</span>         <span class="o">|</span>
+<span class="o">|</span> <span class="mi">12967</span><span class="n">b8a</span><span class="o">-</span><span class="n">ccca</span><span class="o">-</span><span class="mi">4</span><span class="n">a84</span><span class="o">-</span><span class="mf">87e6</span><span class="o">-</span><span class="mi">2443</span><span class="n">daed5fe5</span> <span class="o">|</span> <span class="n">frosty</span><span class="o">-</span><span class="n">wildflower</span><span class="o">-</span><span class="mf">4938.</span><span class="n">edge</span><span class="o">.</span><span class="n">mysocket</span><span class="o">.</span><span class="n">io</span> <span class="o">|</span> <span class="n">http</span> <span class="o">|</span> <span class="mi">80</span> <span class="mi">443</span>  <span class="o">|</span> <span class="n">andree</span> <span class="n">was</span> <span class="n">here</span>       <span class="o">|</span>
+<span class="o">|</span> <span class="mi">05</span><span class="n">da6711</span><span class="o">-</span><span class="n">c2c7</span><span class="o">-</span><span class="mi">4</span><span class="n">c53</span><span class="o">-</span><span class="n">b213</span><span class="o">-</span><span class="mi">21</span><span class="n">ea9a3d1db6</span> <span class="o">|</span> <span class="n">ancient</span><span class="o">-</span><span class="n">voice</span><span class="o">-</span><span class="mf">2982.</span><span class="n">edge</span><span class="o">.</span><span class="n">mysocket</span><span class="o">.</span><span class="n">io</span>     <span class="o">|</span> <span class="n">http</span> <span class="o">|</span> <span class="mi">80</span> <span class="mi">443</span>  <span class="o">|</span> <span class="n">Local</span> <span class="n">port</span> <span class="mi">8000</span>       <span class="o">|</span>
+<span class="o">|</span> <span class="mi">5870</span><span class="n">a362</span><span class="o">-</span><span class="mi">65</span><span class="n">d3</span><span class="o">-</span><span class="mi">474</span><span class="n">d</span><span class="o">-</span><span class="n">bbf6</span><span class="o">-</span><span class="mi">3341827</span><span class="n">eaee0</span> <span class="o">|</span> <span class="n">wild</span><span class="o">-</span><span class="n">pine</span><span class="o">-</span><span class="mf">1229.</span><span class="n">edge</span><span class="o">.</span><span class="n">mysocket</span><span class="o">.</span><span class="n">io</span>         <span class="o">|</span> <span class="n">http</span> <span class="o">|</span> <span class="mi">80</span> <span class="mi">443</span>  <span class="o">|</span> <span class="n">my</span> <span class="n">local</span> <span class="n">http</span> <span class="n">service</span> <span class="o">|</span>
+<span class="o">+--------------------------------------+-----------------------------------------+------+---------+-----------------------+</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="delete-sockets">
+<h2>Delete sockets<a class="headerlink" href="#delete-sockets" title="Permalink to this headline">¶</a></h2>
+<p>To delete a socket, issue the socket delete command and provide the socket_id you wish to delete.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysocketctl</span><span class="o">.</span><span class="n">py</span> <span class="n">socket</span> <span class="n">delete</span> \
+    <span class="o">--</span><span class="n">socket_id</span> <span class="mi">5870</span><span class="n">a362</span><span class="o">-</span><span class="mi">65</span><span class="n">d3</span><span class="o">-</span><span class="mi">474</span><span class="n">d</span><span class="o">-</span><span class="n">bbf6</span><span class="o">-</span><span class="mi">3341827</span><span class="n">eaee0</span>
+
+<span class="n">Socket</span> <span class="mi">5870</span><span class="n">a362</span><span class="o">-</span><span class="mi">65</span><span class="n">d3</span><span class="o">-</span><span class="mi">474</span><span class="n">d</span><span class="o">-</span><span class="n">bbf6</span><span class="o">-</span><span class="mi">3341827</span><span class="n">eaee0</span> <span class="n">deleted</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="tunnel-management">
+<h1>Tunnel Management<a class="headerlink" href="#tunnel-management" title="Permalink to this headline">¶</a></h1>
+<p>In the previous section we looked at managing sockets. Sockets are created on the mysocket servers and serve as the public endpoint for your local services. In order to connect your local service to the mysocket socket we need tunnels.
+In this section we’ll explain how to manage tunnels and how to connect the tunnels. Tunnels provide the connection between your local service and the globally anycasted public sockets for you. Currently we support ssh as a transport protocol for secure connectivity between your local services and mysocket.
+Note that a socket can have multiple tunnels. In that case mysocket will load balance over all available tunnels.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysocketctl</span><span class="o">.</span><span class="n">py</span> <span class="n">tunnel</span> <span class="o">--</span><span class="n">help</span>
+<span class="n">Usage</span><span class="p">:</span> <span class="n">mysocketctl</span><span class="o">.</span><span class="n">py</span> <span class="n">tunnel</span> <span class="p">[</span><span class="n">OPTIONS</span><span class="p">]</span> <span class="n">COMMAND</span> <span class="p">[</span><span class="n">ARGS</span><span class="p">]</span><span class="o">...</span>
+
+<span class="n">Manage</span> <span class="n">your</span> <span class="n">tunnels</span>
+
+<span class="n">Options</span><span class="p">:</span>
+<span class="o">--</span><span class="n">help</span>  <span class="n">Show</span> <span class="n">this</span> <span class="n">message</span> <span class="ow">and</span> <span class="n">exit</span><span class="o">.</span>
+
+<span class="n">Commands</span><span class="p">:</span>
+<span class="n">connect</span>
+<span class="n">create</span>
+<span class="n">delete</span>
+<span class="n">ls</span>
+</pre></div>
+</div>
+<div class="section" id="creating-a-tunnel">
+<h2>Creating a tunnel<a class="headerlink" href="#creating-a-tunnel" title="Permalink to this headline">¶</a></h2>
+<p>The command below creates a new tunnel for a socket we create earlier.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysocketctl</span><span class="o">.</span><span class="n">py</span> <span class="n">tunnel</span> <span class="n">create</span> \
+    <span class="o">--</span><span class="n">socket_id</span> <span class="mi">334</span><span class="n">c2e48</span><span class="o">-</span><span class="mi">8324</span><span class="o">-</span><span class="mi">47</span><span class="n">c0</span><span class="o">-</span><span class="mi">9</span><span class="n">b03</span><span class="o">-</span><span class="n">c0a69c2c7833</span>
+<span class="o">+--------------------------------------+--------------------------------------+---------------+------------+</span>
+<span class="o">|</span> <span class="n">socket_id</span>                            <span class="o">|</span> <span class="n">tunnel_id</span>                            <span class="o">|</span> <span class="n">tunnel_server</span> <span class="o">|</span> <span class="n">relay_port</span> <span class="o">|</span>
+<span class="o">+--------------------------------------+--------------------------------------+---------------+------------+</span>
+<span class="o">|</span> <span class="mi">334</span><span class="n">c2e48</span><span class="o">-</span><span class="mi">8324</span><span class="o">-</span><span class="mi">47</span><span class="n">c0</span><span class="o">-</span><span class="mi">9</span><span class="n">b03</span><span class="o">-</span><span class="n">c0a69c2c7833</span> <span class="o">|</span> <span class="n">dc620ec5</span><span class="o">-</span><span class="mi">76</span><span class="n">d6</span><span class="o">-</span><span class="mf">455e-865</span><span class="n">c</span><span class="o">-</span><span class="n">eac238472bee</span> <span class="o">|</span>               <span class="o">|</span> <span class="mi">6054</span>       <span class="o">|</span>
+<span class="o">+--------------------------------------+--------------------------------------+---------------+------------+</span>
+</pre></div>
+</div>
+<p>Note that the mysocket API returned a tunnel_id and a relay port. The relay port is used when connecting the tunnel, it’s used as the SSH listener port.</p>
+</div>
+<div class="section" id="listing-all-tunnels-for-a-socket">
+<h2>Listing all tunnels for a socket<a class="headerlink" href="#listing-all-tunnels-for-a-socket" title="Permalink to this headline">¶</a></h2>
+<p>To see all tunnels for a socket, issue the <code class="docutils literal notranslate"><span class="pre">mysocket</span> <span class="pre">tunnel</span> <span class="pre">ls</span></code> command like below:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysocketctl</span><span class="o">.</span><span class="n">py</span> <span class="n">tunnel</span> <span class="n">ls</span> \
+    <span class="o">--</span><span class="n">socket_id</span> <span class="mi">334</span><span class="n">c2e48</span><span class="o">-</span><span class="mi">8324</span><span class="o">-</span><span class="mi">47</span><span class="n">c0</span><span class="o">-</span><span class="mi">9</span><span class="n">b03</span><span class="o">-</span><span class="n">c0a69c2c7833</span>
+<span class="o">+--------------------------------------+--------------------------------------+---------------+------------+</span>
+<span class="o">|</span> <span class="n">socket_id</span>                            <span class="o">|</span> <span class="n">tunnel_id</span>                            <span class="o">|</span> <span class="n">tunnel_server</span> <span class="o">|</span> <span class="n">relay_port</span> <span class="o">|</span>
+<span class="o">+--------------------------------------+--------------------------------------+---------------+------------+</span>
+<span class="o">|</span> <span class="mi">334</span><span class="n">c2e48</span><span class="o">-</span><span class="mi">8324</span><span class="o">-</span><span class="mi">47</span><span class="n">c0</span><span class="o">-</span><span class="mi">9</span><span class="n">b03</span><span class="o">-</span><span class="n">c0a69c2c7833</span> <span class="o">|</span> <span class="mi">4</span><span class="n">f1d5c81</span><span class="o">-</span><span class="mi">1531</span><span class="o">-</span><span class="mi">4</span><span class="n">b93</span><span class="o">-</span><span class="mi">9343</span><span class="o">-</span><span class="mi">76</span><span class="n">b5c16194dc</span> <span class="o">|</span> <span class="mf">52.13</span><span class="o">.</span><span class="mf">204.31</span>  <span class="o">|</span> <span class="mi">6043</span>       <span class="o">|</span>
+<span class="o">|</span> <span class="mi">334</span><span class="n">c2e48</span><span class="o">-</span><span class="mi">8324</span><span class="o">-</span><span class="mi">47</span><span class="n">c0</span><span class="o">-</span><span class="mi">9</span><span class="n">b03</span><span class="o">-</span><span class="n">c0a69c2c7833</span> <span class="o">|</span> <span class="n">dc620ec5</span><span class="o">-</span><span class="mi">76</span><span class="n">d6</span><span class="o">-</span><span class="mf">455e-865</span><span class="n">c</span><span class="o">-</span><span class="n">eac238472bee</span> <span class="o">|</span>               <span class="o">|</span> <span class="mi">6054</span>       <span class="o">|</span>
+<span class="o">+--------------------------------------+--------------------------------------+---------------+------------+</span>
+</pre></div>
+</div>
+<p>The tunnel server field indicates what server the tunnel was last connected to.</p>
+</div>
+<div class="section" id="deleting-a-tunnel">
+<h2>Deleting a tunnel<a class="headerlink" href="#deleting-a-tunnel" title="Permalink to this headline">¶</a></h2>
+<p>To delete a tunnel, issue the tunnel delete command and provide the socket_id and tunnel_id you wish to delete.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysocketctl</span><span class="o">.</span><span class="n">py</span> <span class="n">tunnel</span> <span class="n">delete</span> \
+    <span class="o">--</span><span class="n">socket_id</span> <span class="mi">334</span><span class="n">c2e48</span><span class="o">-</span><span class="mi">8324</span><span class="o">-</span><span class="mi">47</span><span class="n">c0</span><span class="o">-</span><span class="mi">9</span><span class="n">b03</span><span class="o">-</span><span class="n">c0a69c2c7833</span> \
+    <span class="o">--</span><span class="n">tunnel_id</span> <span class="n">dc620ec5</span><span class="o">-</span><span class="mi">76</span><span class="n">d6</span><span class="o">-</span><span class="mf">455e-865</span><span class="n">c</span><span class="o">-</span><span class="n">eac238472bee</span>
+
+<span class="n">Tunnel</span> <span class="n">dc620ec5</span><span class="o">-</span><span class="mi">76</span><span class="n">d6</span><span class="o">-</span><span class="mf">455e-865</span><span class="n">c</span><span class="o">-</span><span class="n">eac238472bee</span> <span class="n">deleted</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="connecting-and-using-a-tunnel">
+<h2>Connecting and using a tunnel<a class="headerlink" href="#connecting-and-using-a-tunnel" title="Permalink to this headline">¶</a></h2>
+<p>In order to spin up your tunnel, the <code class="docutils literal notranslate"><span class="pre">mysocketctl</span> <span class="pre">tunnel</span> <span class="pre">connect</span></code> feature may be used.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysocketctl</span><span class="o">.</span><span class="n">py</span> <span class="n">tunnel</span> <span class="n">connect</span> <span class="o">--</span><span class="n">help</span>
+<span class="n">Usage</span><span class="p">:</span> <span class="n">mysocketctl</span><span class="o">.</span><span class="n">py</span> <span class="n">tunnel</span> <span class="n">connect</span> <span class="p">[</span><span class="n">OPTIONS</span><span class="p">]</span>
+
+<span class="n">Options</span><span class="p">:</span>
+<span class="o">--</span><span class="n">socket_id</span> <span class="n">TEXT</span>  <span class="p">[</span><span class="n">required</span><span class="p">]</span>
+<span class="o">--</span><span class="n">tunnel_id</span> <span class="n">TEXT</span>  <span class="p">[</span><span class="n">required</span><span class="p">]</span>
+<span class="o">--</span><span class="n">port</span> <span class="n">TEXT</span>       <span class="p">[</span><span class="n">required</span><span class="p">]</span>
+<span class="o">--</span><span class="n">help</span>            <span class="n">Show</span> <span class="n">this</span> <span class="n">message</span> <span class="ow">and</span> <span class="n">exit</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>It requires socket_id and tunnel_id as mandatory arguments. It also needs to know what port number the local service listens on. This can be any local TCP port, as long as you have something listening on it.
+For example if you have a local webservice you want to make publicly available using this tunnel in port 8000 the provide 8000 as the –port parameter.
+If you wanted to make ssh available and the socket you created is of type TCP, then provide port 22 as the port parameter.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>mysocketctl.py tunnel connect \
+    --socket_id 334c2e48-8324-47c0-9b03-c0a69c2c7833 \
+    --tunnel_id 4f1d5c81-1531-4b93-9343-76b5c16194dc \
+    --port 8000
+
+Connecting to Server: ssh.mysocket.io
+
+Welcome to Mysocket.io!
+Local port 44 - https://white-dew-2957.edge.mysocket.io
+
+=======================================================
+Logs
+=======================================================
+</pre></div>
+</div>
+<p>After issuing the tunnel connect command, mysocketctl calls ssh and sets up the SSH tunnel to ssh.mysocket.io. This is an anycasted ssh service, so users will always use the closest, lowest latency, mysocket ssh server.  Once connected, the mysocket control plane will signal in real time all other servers where this tunnel is. As a result you can re-use the tunnel from multiple endpoints, but only the latest login will be used for traffic. If you would like to load balance over multiple ssh sessions, simply create multiple tunnel connections first.</p>
+<p>The stop the tunnel session, press <code class="docutils literal notranslate"><span class="pre">ctr-c</span></code>.</p>
 </div>
 </div>
 

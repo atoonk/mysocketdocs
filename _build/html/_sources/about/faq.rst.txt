@@ -12,26 +12,40 @@ FAQ
            contents for usage elsewhere.
 
 
-What is Mysocket and why was it developed?
------------------------------------------------------------------------------------
+What is Mysocket?
+====================
+xxx
 
-because it's awesme
+What can I do with Mysocket?
+====================
 
-question 2?
------------------------------------------------------------------------------------
+What performance improvement does Mysocket provide?
+====================
 
-Ansswer 2
 
-:: 
+Where is Mysocket deployed today?
+====================
+Mysocket.io is leverages a global anycast network of 91 Points of Presence in 80 cities across 42 countries. 
+AWS Global Accelerator Edge locations are located in.
 
-    $ ./mysocketctl.py socket ls
-    +--------------------------------------+-----------------------------------------+------+---------+---------------+
-    | socket_id                            | dns_name                                | type | port(s) | name          |
-    +--------------------------------------+-----------------------------------------+------+---------+---------------+
-    | f441738c-4f77-44d5-bc68-99664f272319 | restless-night-1301.edge.mysocket.io    | http | 80 443  | Local port 44 |
-    | b8e0d2cb-9bf5-478a-9c1f-748a6672b499 | broken-field-9390.edge.mysocket.io      | http | 80 443  | Local port 44 |
-    | 12967b8a-ccca-4a84-87e6-2443daed5fe5 | frosty-wildflower-4938.edge.mysocket.io | http | 80 443  | bla           |
-    | 334c2e48-8324-47c0-9b03-c0a69c2c7833 | white-dew-2957.edge.mysocket.io         | http | 80 443  | Local port 44 |
-    +--------------------------------------+-----------------------------------------+------+---------+---------------+
+The tunnel and api servers are deployed throughout North America, Europe and Asia.
+
+
+
+What kind of support is provided?
+====================
+Today support is best effort. 
+
+
+Q: How do I get started with Mysocket?
+====================
+
+Q: What kind of transport security is used between the mysocket.io and the origin.
+====================
+We currently support SSHv2 as the transport and tunneling protocol. It encrypts all traffic to eliminate eavesdropping, connection hijacking, and other attacks.
+
+Q: If I only have one origin server, how do I benefit from the anycast features.
+====================
+
 
 
