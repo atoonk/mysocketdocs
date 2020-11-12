@@ -21,7 +21,7 @@ The goal is for the documentation to be continuously written, corrected and edit
 
 .. note:: You can contribute to the documentation by opening an issue
           or sending patches via pull requests on the `GitHub
-          source repository <https://github.com/NLnetLabs/rpki-doc>`_.
+          source repository <https://github.com/atoonk/mysocketdocs/>`_.
 
 Quick start start
 =========================

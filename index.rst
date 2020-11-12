@@ -12,7 +12,7 @@ fast and secure network connectiovity whenever you need it, wherever you are.
           We always appreciate your feedback and improvements.
 
           You can submit an issue or pull request on the `GitHub repository
-          <https://github.com/NLnetLabs/rpkidoc/issues>`_, 
+          <https://github.com/atoonk/mysocketdocs/>`_, 
 
 The main documentation is organised into the following sections:
 
